@@ -39,7 +39,7 @@ services:
       spring.redis.expiration-in-millis: 86400000
 
       open-weather.url.base: https://api.openweathermap.org/data/2.5/weather
-      open-weather.app.id: 0251e364217525696c58759fd3a15cf1
+      open-weather.app.id: add-your-token-here
       open-weather.app.cities: Minsk, Tbilisi, Bergen
 
       stream-sets.url.base: http://streamsets-datacollector:8000/api/v1/

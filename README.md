@@ -8,6 +8,7 @@ System for storing and aggregation weather temperature
 - Stream Sets service
 
 ## Service set up via docker-compose
+- Update `open-weather.app.id` property in config with appropriate id
 - Build Docker image
 ```bash
 ./gradlew clean build bootBuildImage
@@ -32,6 +33,7 @@ docker-compose -f docker-compose.yml up
 - Import pipeline from `docs/stream-sets/sas-ta-weather-pipeline.json`
 - Install missed JDBC related libraries (just follow StreamSets' prompts)
 - Install JDBC MySQL driver `package-manager --> external libraries --> jdbc driver`
+- Update `open-weather.app.id` property in config with appropriate id
 - Start `flux-data` microservice with IntelliJ or
 ```bash
 ./gradlew clean build bootRun
