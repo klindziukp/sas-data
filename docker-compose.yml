@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  mariadb:
+    image: mariadb:10.2
+    restart: 'always'
+    hostname: mariadb
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "weather"
+      MYSQL_USER: "maria"
+      MYSQL_PASSWORD: "maria"
+    volumes:
+      - "./scripts/sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql"
+    ports:
+      - "3306:3306"
+  redis:
+    image: 'redis'
+    container_name: redis
+    hostname: redis
+    ports:
+      - 6379:6379
+
+  streamsets-datacollector:
+    image: streamsets/datacollector:3.4.2
+    hostname: streamsets-datacollector
+    container_name: streamsets-datacollector
+    restart: unless-stopped
+    ports:
+      - 18630:18630
+      - 8000:8000
+    volumes:
+      - "${PWD}/files:/tmp/out/duplicates"
+    environment:
+      SDC_CONF_HTTP_BINDHOST: 0.0.0.0
+      SDC_CONF_HTTP_PORT: 18630
+      SDC_CONF_HTTPS_PORT: -1
+      SDC_CONF_HTTP2_ENABLE: 'false'
+      SDC_CONF_HTTP_SESSION_MAX_INACTIVE_INTERVAL: 86400
+      SDC_CONF_HTTP_ENABLE_FORWARDED_REQUESTS: 'false'
+      SDC_CONF_PARSER_LIMIT: 4194304
+      SDC_CONF_BUNDLE_UPLOAD_ENABLED: 'false'
+      SDC_CONF_BUNDLE_UPLOAD_ON_ERROR: 'false'
+      SDC_CONF_SYSTEM_STAGELIBS_BLACKLIST: 'streamsets-datacollector-mapr_5_0-lib,streamsets-datacollector-mapr_5_1-lib,streamsets-datacollector-mapr_5_2-lib,streamsets-datacollector-mapr_6_0-lib,streamsets-datacollector-mapr_6_0-mep4-lib,streamsets-datacollector-mapr_6_0-mep5-lib,streamsets-datacollector-mapr_6_1-lib,streamsets-datacollector-mapr_6_1-mep6-lib,streamsets-datacollector-mapr_spark_2_1_mep_3_0-lib'

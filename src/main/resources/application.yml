@@ -1,0 +1,33 @@
+server:
+  port: 9999
+spring:
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
+  r2dbc:
+    driver: mariadb
+    url: r2dbc:mariadb://127.0.0.1:3306/weather
+    username: maria
+    password: maria
+    pool:
+      enabled: true
+      initial-size: 5
+  redis:
+    host: localhost
+    port: 6379
+    key: weatherHash
+    expiration-in-millis: 86400000
+open-weather:
+  url:
+    base: https://api.openweathermap.org/data/2.5/weather
+  app:
+    id: 0251e364217525696c58759fd3a15cf1
+    cities: Minsk, Tbilisi, Bergen
+stream-sets:
+  url:
+    base: http://localhost:8000/api/v1/
+  path:
+    new-item: /weather
+    duplicate-item: /duplicate-weather
+    cleanup-duplicate-items: /cleanup-duplicate-weather
