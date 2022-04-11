@@ -47,7 +47,7 @@ Call to Open Api Weather Service ---> <br>
 
 ## Pipeline start:
 - Open in browser `http:/localhost:18630`, select imported pipeline and press `Play` button
-- Open in browser `http:/localhost:9999/start-stream` and check that data is starts flowing
+- Open in browser `http:/localhost:9999/start-stream` and check that data flow starts
 <p align="left">
     <img src="docs/images/stream-sets-response.gif" width="1000px" alt="stream-sets-response">
 </p>
