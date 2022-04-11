@@ -19,7 +19,7 @@ docker-compose -f docker-compose-full.yml up
 ```
 - Open browser at `http:/localhost:18630` 
 - Login here using `admin/admin` credentials
-- Import pipeline
+- Import pipeline from docs/stream-sets/sas-ta-weather-pipeline.json
 - Install missed JDBC related libraries (just follow StreamSets' prompts)
 - Install JDBC MySQL driver `package-manager --> external libraries --> jdbc driver`
 
