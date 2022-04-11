@@ -18,7 +18,7 @@
 <p align="left">
     <img src="images/table-for-duplicates.png" width="1000px" alt="table-for-duplicates">
 </p>
-*deletedAt* and *deletedBy* fields used as flags for soft deletion, SQL query should be executed with/without filtering by this fields
+__deletedAt__ and __deletedBy__ fields used as flags for soft deletion, SQL query should be executed with/without filtering by this fields
 
 ### 5.Once a day the table have to be cleaned.
 <p align="left">
