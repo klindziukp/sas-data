@@ -46,8 +46,8 @@ Call to Open Api Weather Service ---> <br>
 ---> Show response from StreamSets in browser.
 
 ## Pipeline start:
-- Open in browser at `http:/localhost:18630`, select imported pipeline and press `Play` button
-- Open in browser at `http:/localhost:9999/start-stream` and check that data is starts flowing
+- Open in browser `http:/localhost:18630`, select imported pipeline and press `Play` button
+- Open in browser `http:/localhost:9999/start-stream` and check that data is starts flowing
 <p align="left">
     <img src="docs/images/stream-sets-response.gif" width="1000px" alt="stream-sets-response">
 </p>
