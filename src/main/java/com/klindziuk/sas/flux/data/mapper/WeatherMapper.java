@@ -17,6 +17,7 @@ public interface WeatherMapper {
   @Mapping(target = "temperature", expression = "java(openWeatherResponse.getMain().getTemp() - 273.15F)")
   @Mapping(target = "feelsLike", expression = "java(openWeatherResponse.getMain().getFeelsLike() - 273.15F)")
   @Mapping(target = "windSpeed", source = "openWeatherResponse.wind.speed")
+  @Mapping(target = "humidity", source = "openWeatherResponse.main.humidity")
   @Mapping(target = "city", source = "openWeatherResponse.name")
   @Mapping(target = "country", source = "openWeatherResponse.sys.country")
   @Mapping(target = "duplicate", ignore = true)

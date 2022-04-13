@@ -24,3 +24,14 @@
 <p align="left">
     <img src="images/database-cleanup.png" width="1000px" alt="database-cleanup">
 </p>
+
+### 6.The country name has to be in full name. The additional column with IVR code has to be added
+<p align="left">
+    <img src="images/jdbc-producer-for-country-mapping.png" width="1000px" alt="jdbc-country-mapping">
+</p>
+<p align="left">
+    <img src="images/db-country-mapping.png" width="1000px" alt="db-country-mapping">
+</p>
+<p align="left">
+    <img src="images/db-weather-after-mapping.png" width="1000px" alt="db-country-mapping">
+</p>

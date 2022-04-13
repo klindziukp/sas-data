@@ -22,6 +22,7 @@ public class StreamSetsWeatherRequest {
   @JsonProperty("weather")     private String weather;
   @JsonProperty("temperature") private Float temperature;
   @JsonProperty("feels_like")  private Float feelsLike;
+  @JsonProperty("humidity")    private Integer humidity;
   @JsonProperty("city")        private String city;
   @JsonProperty("country")     private String country;
 

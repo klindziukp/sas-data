@@ -26,3 +26,10 @@ CREATE TABLE IF NOT EXISTS `weather_duplicate` (
     `deleted_by` VARCHAR(255),
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS `country_mapping` (
+    `id` BIGINT AUTO_INCREMENT,
+    `code` varchar(255) NOT NULL,
+    `name` varchar(255) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;

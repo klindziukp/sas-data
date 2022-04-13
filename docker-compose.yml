@@ -12,7 +12,8 @@ services:
       MYSQL_USER: "maria"
       MYSQL_PASSWORD: "maria"
     volumes:
-      - "./scripts/sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql"
+      - "./scripts/sql/001_schema.sql:/docker-entrypoint-initdb.d/001_schema.sql"
+      - "./scripts/sql/002_data.sql:/docker-entrypoint-initdb.d/002_data.sql"
     ports:
       - "3306:3306"
   redis:

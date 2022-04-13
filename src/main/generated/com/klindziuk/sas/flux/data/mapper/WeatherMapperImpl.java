@@ -1,6 +1,7 @@
 package com.klindziuk.sas.flux.data.mapper;
 
 import com.klindziuk.sas.flux.data.model.request.StreamSetsWeatherRequest;
+import com.klindziuk.sas.flux.data.model.response.openweather.Main;
 import com.klindziuk.sas.flux.data.model.response.openweather.OpenWeatherResponse;
 import com.klindziuk.sas.flux.data.model.response.openweather.Sys;
 import com.klindziuk.sas.flux.data.model.response.openweather.Wind;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-04-07T18:55:35+0400",
+    date = "2022-04-13T11:06:29+0400",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 12.0.2 (Oracle Corporation)"
 )
 @Component
@@ -25,6 +26,10 @@ public class WeatherMapperImpl implements WeatherMapper {
         StreamSetsWeatherRequest streamSetsWeatherRequest = new StreamSetsWeatherRequest();
 
         streamSetsWeatherRequest.setWindSpeed( openWeatherResponseWindSpeed( openWeatherResponse ) );
+        String humidity = openWeatherResponseMainHumidity( openWeatherResponse );
+        if ( humidity != null ) {
+            streamSetsWeatherRequest.setHumidity( Integer.parseInt( humidity ) );
+        }
         streamSetsWeatherRequest.setCity( openWeatherResponse.getName() );
         streamSetsWeatherRequest.setCountry( openWeatherResponseSysCountry( openWeatherResponse ) );
 
@@ -49,6 +54,21 @@ public class WeatherMapperImpl implements WeatherMapper {
             return null;
         }
         return speed;
+    }
+
+    private String openWeatherResponseMainHumidity(OpenWeatherResponse openWeatherResponse) {
+        if ( openWeatherResponse == null ) {
+            return null;
+        }
+        Main main = openWeatherResponse.getMain();
+        if ( main == null ) {
+            return null;
+        }
+        String humidity = main.getHumidity();
+        if ( humidity == null ) {
+            return null;
+        }
+        return humidity;
     }
 
     private String openWeatherResponseSysCountry(OpenWeatherResponse openWeatherResponse) {
