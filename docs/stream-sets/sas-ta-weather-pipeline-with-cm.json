@@ -2,10 +2,10 @@
   "pipelineConfig" : {
     "schemaVersion" : 6,
     "version" : 10,
-    "pipelineId" : "sastaweatherpipelinea2c69189-bb9c-49fb-b56f-f33293405643",
+    "pipelineId" : "sastaweatherpipeline8cb6b79c-d016-4a7b-945a-d03129e1f977",
     "title" : "sas-ta-weather-pipeline",
     "description" : "",
-    "uuid" : "4dd4b687-ca21-400b-80e2-372954ab6aa1",
+    "uuid" : "a51dc3aa-282e-4888-a871-0462a9322ef4",
     "configuration" : [ {
       "name" : "executionMode",
       "value" : "STANDALONE"
@@ -646,134 +646,6 @@
       "eventLanes" : [ ],
       "services" : [ ]
     }, {
-      "instanceName" : "JDBCTee_01",
-      "library" : "streamsets-datacollector-jdbc-lib",
-      "stageName" : "com_streamsets_pipeline_stage_processor_jdbctee_JdbcTeeDProcessor",
-      "stageVersion" : "2",
-      "configuration" : [ {
-        "name" : "schema",
-        "value" : "weather"
-      }, {
-        "name" : "tableNameTemplate",
-        "value" : "weather"
-      }, {
-        "name" : "customMappings",
-        "value" : [ ]
-      }, {
-        "name" : "generatedColumnMappings",
-        "value" : [ {
-          "dataType" : "USE_COLUMN_TYPE",
-          "columnName" : "weather",
-          "field" : "/weather"
-        } ]
-      }, {
-        "name" : "encloseTableName",
-        "value" : false
-      }, {
-        "name" : "changeLogFormat",
-        "value" : "NONE"
-      }, {
-        "name" : "defaultOperation",
-        "value" : "INSERT"
-      }, {
-        "name" : "unsupportedAction",
-        "value" : "DISCARD"
-      }, {
-        "name" : "useMultiRowOp",
-        "value" : true
-      }, {
-        "name" : "maxPrepStmtParameters",
-        "value" : -1
-      }, {
-        "name" : "maxPrepStmtCache",
-        "value" : -1
-      }, {
-        "name" : "rollbackOnError",
-        "value" : false
-      }, {
-        "name" : "hikariConfigBean.connectionString",
-        "value" : "jdbc:mysql://mariadb:3306/weather"
-      }, {
-        "name" : "hikariConfigBean.useCredentials",
-        "value" : true
-      }, {
-        "name" : "hikariConfigBean.username",
-        "value" : "maria"
-      }, {
-        "name" : "hikariConfigBean.password",
-        "value" : "maria"
-      }, {
-        "name" : "hikariConfigBean.driverProperties",
-        "value" : [ { } ]
-      }, {
-        "name" : "hikariConfigBean.driverClassName",
-        "value" : null
-      }, {
-        "name" : "hikariConfigBean.connectionTestQuery",
-        "value" : null
-      }, {
-        "name" : "hikariConfigBean.maximumPoolSize",
-        "value" : 1
-      }, {
-        "name" : "hikariConfigBean.minIdle",
-        "value" : 1
-      }, {
-        "name" : "hikariConfigBean.connectionTimeout",
-        "value" : "${30 * SECONDS}"
-      }, {
-        "name" : "hikariConfigBean.idleTimeout",
-        "value" : "${10 * MINUTES}"
-      }, {
-        "name" : "hikariConfigBean.maxLifetime",
-        "value" : "${30 * MINUTES}"
-      }, {
-        "name" : "hikariConfigBean.initialQuery",
-        "value" : null
-      }, {
-        "name" : "hikariConfigBean.transactionIsolation",
-        "value" : "DEFAULT"
-      }, {
-        "name" : "stageOnRecordError",
-        "value" : "TO_ERROR"
-      }, {
-        "name" : "stageRequiredFields",
-        "value" : [ ]
-      }, {
-        "name" : "stageRecordPreconditions",
-        "value" : [ ]
-      } ],
-      "uiInfo" : {
-        "description" : "",
-        "label" : "Insert New Weather Record",
-        "xPos" : 949.6902439864641,
-        "yPos" : 34.98802947998047,
-        "stageType" : "PROCESSOR"
-      },
-      "inputLanes" : [ "ExpressionEvaluator_02OutputLane15321928591860" ],
-      "outputLanes" : [ "JDBCTee_01OutputLane16491823718290" ],
-      "eventLanes" : [ ],
-      "services" : [ ]
-    }, {
-      "instanceName" : "SendtoOriginResponse_01",
-      "library" : "streamsets-datacollector-basic-lib",
-      "stageName" : "com_streamsets_pipeline_stage_destination_tooriginresponse_ToOriginResponseDTarget",
-      "stageVersion" : "1",
-      "configuration" : [ {
-        "name" : "statusCode",
-        "value" : 200
-      } ],
-      "uiInfo" : {
-        "description" : "",
-        "label" : "Send POST New Item Response",
-        "xPos" : 1218.2958984375,
-        "yPos" : 36.07661437988281,
-        "stageType" : "TARGET"
-      },
-      "inputLanes" : [ "JDBCTee_01OutputLane16491823718290" ],
-      "outputLanes" : [ ],
-      "eventLanes" : [ ],
-      "services" : [ ]
-    }, {
       "instanceName" : "ExpressionEvaluator_03",
       "library" : "streamsets-datacollector-basic-lib",
       "stageName" : "com_streamsets_pipeline_stage_processor_expression_ExpressionDProcessor",
@@ -913,7 +785,7 @@
       "uiInfo" : {
         "description" : "",
         "label" : "Insert New Duplicate Record",
-        "xPos" : 953.623291015625,
+        "xPos" : 952.1441650390625,
         "yPos" : 176.28437042236328,
         "stageType" : "PROCESSOR"
       },
@@ -1296,6 +1168,83 @@
       "outputLanes" : [ ],
       "eventLanes" : [ ],
       "services" : [ ]
+    }, {
+      "instanceName" : "JDBCQuery_02",
+      "library" : "streamsets-datacollector-jdbc-lib",
+      "stageName" : "com_streamsets_pipeline_stage_executor_jdbc_JdbcQueryDExecutor",
+      "stageVersion" : "2",
+      "configuration" : [ {
+        "name" : "config.hikariConfigBean.connectionString",
+        "value" : "jdbc:mysql://mariadb:3306/weather"
+      }, {
+        "name" : "config.hikariConfigBean.useCredentials",
+        "value" : true
+      }, {
+        "name" : "config.hikariConfigBean.username",
+        "value" : "maria"
+      }, {
+        "name" : "config.hikariConfigBean.password",
+        "value" : "maria"
+      }, {
+        "name" : "config.hikariConfigBean.driverProperties",
+        "value" : [ { } ]
+      }, {
+        "name" : "config.hikariConfigBean.driverClassName",
+        "value" : null
+      }, {
+        "name" : "config.hikariConfigBean.connectionTestQuery",
+        "value" : null
+      }, {
+        "name" : "config.hikariConfigBean.maximumPoolSize",
+        "value" : 1
+      }, {
+        "name" : "config.hikariConfigBean.minIdle",
+        "value" : 1
+      }, {
+        "name" : "config.hikariConfigBean.connectionTimeout",
+        "value" : "${30 * SECONDS}"
+      }, {
+        "name" : "config.hikariConfigBean.idleTimeout",
+        "value" : "${10 * MINUTES}"
+      }, {
+        "name" : "config.hikariConfigBean.maxLifetime",
+        "value" : "${30 * MINUTES}"
+      }, {
+        "name" : "config.hikariConfigBean.autoCommit",
+        "value" : false
+      }, {
+        "name" : "config.hikariConfigBean.initialQuery",
+        "value" : null
+      }, {
+        "name" : "config.hikariConfigBean.transactionIsolation",
+        "value" : "DEFAULT"
+      }, {
+        "name" : "config.query",
+        "value" : "INSERT INTO weather (weather, description, temperature, feels_like, wind_speed, humidity, city, country)\nVALUES('${record:value('/weather')}',\n       '${record:value('/description')}',\n       '${record:value('/temperature')}',\n       '${record:value('/feels_like')}',\n       '${record:value('/wind_speed')}',\n       '${record:value('/humidity')}',\n       '${record:value('/city')}',\n       (SELECT name FROM country_mapping WHERE code = '${record:value('/country')}') \n      );"
+      }, {
+        "name" : "config.batchCommit",
+        "value" : true
+      }, {
+        "name" : "stageOnRecordError",
+        "value" : "TO_ERROR"
+      }, {
+        "name" : "stageRequiredFields",
+        "value" : [ ]
+      }, {
+        "name" : "stageRecordPreconditions",
+        "value" : [ ]
+      } ],
+      "uiInfo" : {
+        "description" : "",
+        "label" : "Save item with country mapping",
+        "xPos" : 939.2042689372586,
+        "yPos" : 32.539377423943044,
+        "stageType" : "EXECUTOR"
+      },
+      "inputLanes" : [ "ExpressionEvaluator_02OutputLane15321928591860" ],
+      "outputLanes" : [ ],
+      "eventLanes" : [ ],
+      "services" : [ ]
     } ],
     "errorStage" : {
       "instanceName" : "SendtoOriginResponse_ErrorStage",
@@ -1319,23 +1268,23 @@
       "services" : [ ]
     },
     "info" : {
-      "pipelineId" : "sastaweatherpipelinea2c69189-bb9c-49fb-b56f-f33293405643",
+      "pipelineId" : "sastaweatherpipeline8cb6b79c-d016-4a7b-945a-d03129e1f977",
       "title" : "sas-ta-weather-pipeline",
       "description" : "",
-      "created" : 1649919466441,
-      "lastModified" : 1649919857692,
+      "created" : 1649787018223,
+      "lastModified" : 1649837713984,
       "creator" : "admin",
       "lastModifier" : "admin",
       "lastRev" : "0",
-      "uuid" : "4dd4b687-ca21-400b-80e2-372954ab6aa1",
+      "uuid" : "a51dc3aa-282e-4888-a871-0462a9322ef4",
       "valid" : true,
       "metadata" : {
         "labels" : [ ],
         "MICROSERVICE" : true
       },
-      "name" : "sastaweatherpipelinea2c69189-bb9c-49fb-b56f-f33293405643",
+      "name" : "sastaweatherpipeline8cb6b79c-d016-4a7b-945a-d03129e1f977",
       "sdcVersion" : "3.4.2",
-      "sdcId" : "e47393cb-bbbf-11ec-b3ae-ef735d1867dc"
+      "sdcId" : "6bc92f22-ba8b-11ec-a497-5ff71453a98f"
     },
     "metadata" : {
       "labels" : [ ],
@@ -1394,11 +1343,13 @@
         "value" : "TO_ERROR"
       } ],
       "uiInfo" : {
-        "stageType" : "SOURCE",
-        "label" : "Test Origin - Dev Raw Data Source"
+        "label" : "Test Origin - Dev Raw Data Source",
+        "xPos" : 10.000007629394531,
+        "yPos" : 168.87025451660156,
+        "stageType" : "SOURCE"
       },
       "inputLanes" : [ ],
-      "outputLanes" : [ "com_streamsets_pipeline_stage_devtest_rawdata_RawDataDSource_TestOriginStageOutputLane1" ],
+      "outputLanes" : [ "RESTService_01OutputLane15278905110860" ],
       "eventLanes" : [ ],
       "services" : [ {
         "service" : "com.streamsets.pipeline.api.service.dataformats.DataFormatParserService",
@@ -1685,7 +1636,7 @@
     } ],
     "dataRuleDefinitions" : [ ],
     "driftRuleDefinitions" : [ ],
-    "uuid" : "9d72f225-01dc-4f3d-85ed-f71bf3d572e7",
+    "uuid" : "9732a105-4afc-465e-8897-1708eb200da6",
     "configuration" : [ {
       "name" : "emailIDs",
       "value" : [ ]
