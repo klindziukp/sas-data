@@ -11,6 +11,9 @@
 
 ### 3.All temperature values should be stored in Celsius
 <p align="left">
+    <img src="images/temperature-mapper.png" width="1000px" alt="temperature-mapper">
+</p>
+<p align="left">
     <img src="images/items-to-store.png" width="1000px" alt="items-to-store">
 </p>
 
@@ -33,5 +36,10 @@ __deletedAt__ and __deletedBy__ fields used as flags for soft deletion, SQL quer
     <img src="images/db-country-mapping.png" width="1000px" alt="db-country-mapping">
 </p>
 <p align="left">
-    <img src="images/db-weather-after-mapping.png" width="1000px" alt="db-country-mapping">
+    <img src="images/items-to-store.png" width="1000px" alt="items-to-store">
+</p>
+
+### 7.Pipeline overall
+<p align="left">
+    <img src="images/pipeline-overall.png" width="1000px" alt="pipeline-overall">
 </p>

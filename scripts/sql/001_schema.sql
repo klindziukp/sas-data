@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS `weather` (
   `humidity` int(3) DEFAULT 0,
   `city` varchar(255) NOT NULL,
   `country` varchar(255) NOT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
@@ -21,6 +22,7 @@ CREATE TABLE IF NOT EXISTS `weather_duplicate` (
     `humidity` int(5) DEFAULT 0,
     `city` varchar(255) NOT NULL,
     `country` varchar(255) NOT NULL,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     /*  --- Flags for soft delete --- */
     `deleted_at` TIMESTAMP NULL DEFAULT NULL,
     `deleted_by` VARCHAR(255),
