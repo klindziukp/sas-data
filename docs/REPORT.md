@@ -1,4 +1,39 @@
 # TASK REPORT
+## GENERAL REQUIREMENTS:
+### 1. The BD screenshots
+Main weather table:
+<p align="left">
+    <img src="images/items-to-store.png" width="1000px" alt="items-to-store">
+</p>
+Duplicates weather table:
+<p align="left">
+    <img src="images/table-for-duplicates.png" width="1000px" alt="table-for-duplicates">
+</p>
+Ivr table:
+<p align="left">
+    <img src="images/db-country-mapping.png" width="1000px" alt="db-country-mapping">
+</p>
+
+### 2. The CSV file screenshot with duplicates
+<p align="left">
+    <img src="images/duplicates-in-csv-file.png" width="1000px" alt="duplicates-in-csv-file">
+</p>
+
+### 3.Pipeline processing video/screenshots should be provided
+Stream-Sets record processing
+<p align="left">
+    <img src="images/streams-sets-processing.gif" width="1000px" alt="stream-sets-processing">
+</p>
+Stream-Sets API response after record processing
+<p align="left">
+    <img src="images/stream-sets-response.gif" width="1000px" alt="stream-sets-response">
+</p>
+
+### 4.The access to pipeline json(s)
+[Pipeline Json with Response](https://github.com/klindziukp/sas-data/blob/master/docs/stream-sets/sas-ta-weather-pipeline.json)
+[Pipeline Json with DB Mapping](https://github.com/klindziukp/sas-data/blob/master/docs/stream-sets/sas-ta-weather-pipeline-with-cm.json)
+
+## ADDITIONAL REQUIREMENTS:
 ### 1.Only the following fields have to be stored: wind_speed, description, weather, temperature, feels_like, humidity, city, country
 <p align="left">
     <img src="images/items-to-store.png" width="1000px" alt="items-to-store">
