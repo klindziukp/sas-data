@@ -20,7 +20,7 @@ Ivr table:
     <img src="images/duplicates-in-csv-file.png" width="1000px" alt="duplicates-in-csv-file">
 </p>
 
-### 3.Pipeline processing video/screenshots should be provided
+### 3.Pipeline processing
 Stream-Sets record processing
 <p align="left">
     <img src="images/streams-sets-processing.gif" width="1000px" alt="stream-sets-processing">
