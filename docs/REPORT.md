@@ -5,6 +5,7 @@ Main weather table:
 <p align="left">
     <img src="images/items-to-store.png" width="1000px" alt="items-to-store">
 </p>
+
 Duplicates weather table:
 <p align="left">
     <img src="images/table-for-duplicates.png" width="1000px" alt="table-for-duplicates">
@@ -30,7 +31,7 @@ Stream-Sets API response after record processing
 </p>
 
 ### 4.The access to pipeline json(s)
-[Pipeline Json with Response](https://github.com/klindziukp/sas-data/blob/master/docs/stream-sets/sas-ta-weather-pipeline.json)
+[Pipeline Json with Response](https://github.com/klindziukp/sas-data/blob/master/docs/stream-sets/sas-ta-weather-pipeline.json) <br>
 [Pipeline Json with DB Mapping](https://github.com/klindziukp/sas-data/blob/master/docs/stream-sets/sas-ta-weather-pipeline-with-cm.json)
 
 ## ADDITIONAL REQUIREMENTS:
@@ -72,9 +73,4 @@ __deletedAt__ and __deletedBy__ fields used as flags for soft deletion, SQL quer
 </p>
 <p align="left">
     <img src="images/items-to-store.png" width="1000px" alt="items-to-store">
-</p>
-
-### 7.Pipeline overall
-<p align="left">
-    <img src="images/pipeline-overall.png" width="1000px" alt="pipeline-overall">
 </p>
